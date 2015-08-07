@@ -1,8 +1,9 @@
 'use strict' ;
- var D = require('./derivativenum'),
+ var D = require('./lib/derivativenum'),
   Xintersection=require('./lib/Xintersection'),
  testRoot=require('./lib/testRoot'),
  regulafalsi = require('./lib/regulafalsi'),
+  randomsearch = require('./lib/randomsearch'),
  sortInterval = require('./lib/sortInterval'),
  fixedpoint = require('./lib/fixedpoint'),
  bisection = require('./lib/bisection'),
@@ -12,7 +13,7 @@
 
 
 var nsolveqn =  function (g,interval,options) {
-    options = options || { npoints : 1000, presicion : 0.001, method : 'regulafalsi' } ;
+    options = options || { npoints : 1000, presicion : 0.001, method : 'bisection' } ;
         var presicion = options.presicion ;
         var method = options.method ;
         return  eval(' this.' +method)(g,interval,presicion);
@@ -27,3 +28,4 @@ module.exports.bisection = bisection  ;
 module.exports.Newton_Raphson = Newton_Raphson  ;
 module.exports.Newton_Raphson_Higherorder = Newton_Raphson_Higherorder  ;
 module.exports.D = D  ;
+module.exports.randomsearch = randomsearch  ;
