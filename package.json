@@ -1,0 +1,31 @@
+{
+  "name": "jnsolve",
+  "version": "0.0.1",
+  "description": "Solve equations using numerical methods ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4yopping/jnsolve.git"
+  },
+  "keywords": [
+    "Solve",
+    "equation",
+    "method",
+    "numeric",
+    "numerical",
+    "numerically"
+  ],
+  "author": "Jesús Edel Cereceres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4yopping/jnsolve/issues"
+  },
+  "homepage": "https://github.com/4yopping/jnsolve#readme",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "regression": "^1.2.1"
+  }
+}
