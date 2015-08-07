@@ -1,19 +1,22 @@
 'use strict' ;
- var D = require('./lib/derivativenum'),
-  Xintersection=require('./lib/Xintersection'),
- testRoot=require('./lib/testRoot'),
- regulafalsi = require('./lib/regulafalsi'),
+ var D =         require('./lib/derivativenum'),
+  Xintersection= require('./lib/Xintersection'),
+  testRoot=      require('./lib/testRoot'),
+  regulafalsi =  require('./lib/regulafalsi'),
   randomsearch = require('./lib/randomsearch'),
- sortInterval = require('./lib/sortInterval'),
- fixedpoint = require('./lib/fixedpoint'),
- bisection = require('./lib/bisection'),
- Newton_Raphson = require('./lib/Newton_Raphson'),
- Newton_Raphson_Higherorder = require('./lib/Newton_Raphson_Higherorder') ;
- module.exports = { } ;
+  sortInterval = require('./lib/sortInterval'),
+  fixedpoint =   require('./lib/fixedpoint'),
+  bisection =    require('./lib/bisection'),
+  Newton_Raphson = require('./lib/Newton_Raphson'),
+  Newton_Raphson_Higherorder = require('./lib/Newton_Raphson_Higherorder') ;
 
 
 var nsolveqn =  function (g,interval,options) {
-    options = options || { npoints : 1000, presicion : 0.001, method : 'bisection' } ;
+    options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' } ;
+    options.presicion = options.presicion || 0.001 ;
+    options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;
+    options.nstepsmax = options.nstepsmax || 1000 ;
+    options.method = options.method || 'Newton_Rapshon_Higherorder'
         var presicion = options.presicion ;
         var method = options.method ;
         return  eval(' this.' +method)(g,interval,presicion);
