@@ -12,7 +12,7 @@ gulp.task('lint', function () {
     .pipe(jshint.reporter(stylish));
 });
 // Default
-gulp.task('default', ['lint','test'], function () {
-  gulp.watch(['**/*.js', '!./node_modules/**'], ['lint']);
+gulp.task('default', ['test'], function () {
+  gulp.watch(['**/*.js', '!./node_modules/**'], ['test']);
 });
  require('./test/test');

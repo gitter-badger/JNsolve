@@ -33,7 +33,7 @@ console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder
     gulp.task( 'test', function () {
 
     test() ;
-    process.exit();
+  //  process.exit();
 
   });
 
