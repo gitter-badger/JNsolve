@@ -1,0 +1,2 @@
+# JNsolve
+solve numerically equations
