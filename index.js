@@ -1,19 +1,29 @@
 'use strict' ;
-var    D = require('./derivativenum');
-var Xintersection=require('./lib/Xintersection');
-var testRoot=require('./lib/testRoot');
-var regulafalsi = require('./lib/regulafalsi');
-var sortInterval = require('./lib/sortInterval');
-var fixedpoint = require('./lib/fixedpoint');
-var bisection = require('./lib/bisection');
-var Newton_Raphson = require('./lib/Newton_Raphson');
-var Newton_Raphson_Higherorder = require('./lib/Newton_Raphson_Higherorder');
-var module.exports = {} ;
+ var D = require('./derivativenum'),
+  Xintersection=require('./lib/Xintersection'),
+ testRoot=require('./lib/testRoot'),
+ regulafalsi = require('./lib/regulafalsi'),
+ sortInterval = require('./lib/sortInterval'),
+ fixedpoint = require('./lib/fixedpoint'),
+ bisection = require('./lib/bisection'),
+ Newton_Raphson = require('./lib/Newton_Raphson'),
+ Newton_Raphson_Higherorder = require('./lib/Newton_Raphson_Higherorder') ;
+ module.exports = { } ;
+
 
 var nsolveqn =  function (g,interval,options) {
-    var options = options || { npoints : 1000, presicion : 0.001, method : 'regulafalsi' } ;
+    options = options || { npoints : 1000, presicion : 0.001, method : 'regulafalsi' } ;
         var presicion = options.presicion ;
         var method = options.method ;
-        return  eval("this." +method)(g,interval,presicion);
+        return  eval(' this.' +method)(g,interval,presicion);
 };
 module.exports.nsolveqn = nsolveqn ;
+module.exports.Xintersection = Xintersection ;
+module.exports.testRoot = testRoot ;
+module.exports.regulafalsi= regulafalsi ;
+module.exports.sortInterval= sortInterval ;
+module.exports.fixedpoint = fixedpoint  ;
+module.exports.bisection = bisection  ;
+module.exports.Newton_Raphson = Newton_Raphson  ;
+module.exports.Newton_Raphson_Higherorder = Newton_Raphson_Higherorder  ;
+module.exports.D = D  ;
