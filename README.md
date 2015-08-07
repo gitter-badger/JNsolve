@@ -1,5 +1,5 @@
 # JNsolve
-solve numerically equations
+Solve numerically equations and calculate best fit to a data array given, also provides a series of numeric routines usable.
 
 ## Introduction
 
