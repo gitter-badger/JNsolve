@@ -69,7 +69,7 @@ JNsolve.D.linear_interpolation([[0,3.2],[1,4.6],[2,5.1],[4,6.9]]).function_inter
 ```
 Is a aproximation interpolated to the `Array` = [[0,3.2],[1,4.6],[2,5.1],[4,6.9]].
 
-#### `JNsolve#nsolveqn(Function,Number, Array,Object)`
+#### `JNsolve#nsolveqn(Function, Array[,Number,Object])`
 Is a method that calculate numerically the solution of `Function`=>f(x)=0 try in the interval (`Array`=>[a,b]) beginning  on `Number`=>x_0 (initial point).
 
 ```js
