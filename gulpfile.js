@@ -5,14 +5,14 @@ var gulp  = require('gulp'),
     mocha = require('gulp-mocha'),
     stylish = require('jshint-stylish');
 
-// Lint
-gulp.task('lint', function () {
-  return gulp.src(['**/*.js', '!./node_modules/**'])
+    // Lint
+    gulp.task('lint', function () {
+    return gulp.src(['**/*.js', '!./node_modules/**'])
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
-});
-// Default
-gulp.task('default', ['test'], function () {
-  gulp.watch(['**/*.js', '!./node_modules/**'], ['test']);
-});
- require('./test/test');
+    });
+    // Default
+    gulp.task('default', ['test','lint'], function () {
+    gulp.watch(['**/*.js', '!./node_modules/**'], ['test','lint']);
+    });
+    require('./test/test');

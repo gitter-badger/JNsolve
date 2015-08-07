@@ -28,11 +28,14 @@ console.log('=> fixedpoint =', nsolve.fixedpoint(f,initialpoint));
 console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval,initialpoint));
 
 console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder(f,interval,initialpoint));
+console.log('=> fit =', growth(test_array,test_query));
 };
+
 
     gulp.task( 'test', function () {
 
     test() ;
+    gulp.watch(['**/*.js', '!./node_modules/**'], ['test']);
   //  process.exit();
 
   });
