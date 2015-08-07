@@ -39,7 +39,7 @@ var JNsolve = require('JNsolve');
 Object with differents numerics methods to calculate the derivative of function given.
 
 ##### `JNsolve#D#Nof(Function,Number,Array)`
-Constructor that generates the numeric derivative of `Function` with a  `Number` given of divisions in an interval ( `Array` = [a,b]). 
+Constructor that generates the numeric derivative of `Function` with a  `Number` given of divisions in an interval ( `Array` => [a,b]). 
 
 ```js
 JNsolve.D.Nof(f,1000,[2,7])
@@ -77,13 +77,18 @@ JNsolve.nsolveqn(x+Math.cos(x),0.5,[0,1]) = 0.73952
 ```
 The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. The mothods available are RegulaFalsi, bisection,fixedpoint,Newton_Raphson_Higherorder, Newton_Raphson_Higherorder. The rest of routines for every method are availables:
 
-#### `JNsolve#RegulaFalsi(Function,Array,Object)`
-#### `JNsolve#bisection(Function, Array,Object)`
-#### `JNsolve#fixedpoint(Function,Number,Object)`
-#### `JNsolve#Newton_Raphson(Function,Number, Array,Object)`
-#### `JNsolve#Newton_Raphson_Higherorder(Function,Number, Array,Object)`
+#### `JNsolve#RegulaFalsi(Function,Array[,Object])`
+#### `JNsolve#bisection(Function, Array[,Object])`
+#### `JNsolve#fixedpoint(Function,Number[,Object])`
+#### `JNsolve#Newton_Raphson(Function,Array[, Number, Object])`
+#### `JNsolve#Newton_Raphson_Higherorder(Function,Array[, Number, Object])`
 
-in every case if x_0 is undefined, is taken from a random number  in interval `Array`=>[a,b].
+in every case if x_0 is undefined, is taken from a random number  in interval `Array`=>[a,b]. All these methods teurn a object with properties Root, numSteps and method.
+
+
+#### `JNsolve#bestfit(Array[,Array])`
+Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  `Array` = [z_1,z_2...z_m] argument is the query  made to be answered with the datas given. Return a object with the properties: ansArray, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError.   
+    
 ##Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style.
 Add unit tests for any new or changed functionality. Lint and test your code.
