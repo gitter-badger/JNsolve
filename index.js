@@ -8,10 +8,11 @@
   fixedpoint =   require('./lib/fixedpoint'),
   bisection =    require('./lib/bisection'),
   Newton_Raphson = require('./lib/Newton_Raphson'),
+  bestfit = require('./fit/bestfit'),
   Newton_Raphson_Higherorder = require('./lib/Newton_Raphson_Higherorder') ;
 
 
-var nsolveqn =  function (g,interval,options) {
+var nsolveqn =  function (g,interval,initialpoint,options) {
     options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' } ;
     options.presicion = options.presicion || 0.001 ;
     options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;
@@ -19,8 +20,9 @@ var nsolveqn =  function (g,interval,options) {
     options.method = options.method || 'Newton_Rapshon_Higherorder'
         var presicion = options.presicion ;
         var method = options.method ;
-        return  eval(' this.' +method)(g,interval,presicion);
+        return  eval(method)(g,interval,initialpoint,presicion);
 };
+module.exports.bestfit = bestfit ;
 module.exports.nsolveqn = nsolveqn ;
 module.exports.Xintersection = Xintersection ;
 module.exports.testRoot = testRoot ;
