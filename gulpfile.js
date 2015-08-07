@@ -11,9 +11,8 @@ gulp.task('lint', function () {
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
 });
-
-
 // Default
-gulp.task('default', ['lint'], function () {
+gulp.task('default', ['lint','test'], function () {
   gulp.watch(['**/*.js', '!./node_modules/**'], ['lint']);
 });
+ require('./test/test');

@@ -3,9 +3,6 @@
   "curly": true,
   "eqeqeq": true,
   "eqnull": true,
-  "predef": [
-
-  ],
   "globalstrict": true,
   "indent": 2,
   "latedef": true,
