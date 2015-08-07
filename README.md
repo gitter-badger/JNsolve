@@ -1,9 +1,9 @@
 # JNsolve
-Solve numerically equations and calculate best fit to a data array given, also provides a series of numeric routines usable.
+
 
 ## Introduction
 
-Node.js JNsolve library is a repository of differents methods numerics to solve equation and calculus of fit.
+Solve numerically equations and calculate best fit to a data array given, also provides a series of numeric routines usable.
 
 
 ## Installation
