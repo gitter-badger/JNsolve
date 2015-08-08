@@ -17,7 +17,7 @@ var nsolveqn =  function (g,interval,initialpoint,options) {
     options.presicion = options.presicion || 0.001 ;
     options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;
     options.nstepsmax = options.nstepsmax || 1000 ;
-    options.method = options.method || 'Newton_Rapshon_Higherorder'
+    options.method = options.method || 'bisection'
         var presicion = options.presicion ;
         var method = options.method ;
         return  eval(method)(g,interval,initialpoint,presicion);

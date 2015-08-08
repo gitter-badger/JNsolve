@@ -7,13 +7,13 @@ var growth = require('../lib/bestfit'),
 var test_array= [[0,3.2],[1,4.6],[2,5.1],[4,6.9]];
 var test_query = [3.4, 4.8, 8, 11] ;
 function g(x) {
-  return  Math.cos(x)-x;
+  return  Math.exp(x)-x;
 }
 var test = function () {
 var f = g ;
 var array_to_fit =  test_array ;
-var initialpoint =  0.5 ;
-var interval =  [-10,10] ;
+var initialpoint =  2 ;
+var interval =  [-20,20] ;
 var array_to_Query =  test_query  ;
 
 console.log(
