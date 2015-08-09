@@ -46,7 +46,7 @@ JNsolve.D.Nof(f,1000,[2,7])
 ```
 
 ##### `JNsolve#D#Nof#f_x`
-Is a instance method what is the derivative numerical of  `Function` with a   `Number` given of divisions in an interval (  `Array` = [a,b]). 
+Is a instance method what is the derivative numerical of  `Function` with a   `Number` given of divisions in an interval (  `Array` => [a,b]). 
 
 ```js
 JNsolve.D.Nof(f,1000,[2,7]).f_x(3)
