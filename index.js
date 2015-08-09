@@ -1,5 +1,5 @@
 'use strict' ;
- var D =         require('./lib/derivativenum'),
+ var D =         require('./lib/derivativeN'),
   Xintersection= require('./lib/Xintersection'),
   testRoot=      require('./lib/testRoot'),
   regulafalsi =  require('./lib/regulafalsi'),
@@ -10,17 +10,30 @@
   Newton_Raphson = require('./lib/Newton_Raphson'),
   bestfit = require('./fit/bestfit'),
   Newton_Raphson_Higherorder = require('./lib/Newton_Raphson_Higherorder') ;
+var methodN = {
+  Newton_Raphson_Higherorder  : Newton_Raphson_Higherorder ,
 
+  Newton_Raphson :
+  Newton_Raphson ,
 
+  fixedpoint :
+  fixedpoint,
+
+  regulafalsi :
+  regulafalsi,
+
+    bisection :
+    bisection
+}
 var nsolveqn =  function (g,interval,initialpoint,options) {
-    options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' } ;
+    options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Raphson' } ;
     options.presicion = options.presicion || 0.001 ;
     options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;
     options.nstepsmax = options.nstepsmax || 1000 ;
-    options.method = options.method || 'bisection'
+    options.method = options.method || 'Newton_Raphson'
         var presicion = options.presicion ;
         var method = options.method ;
-        return  eval(method)(g,interval,initialpoint,presicion);
+        return  methodN[method](g,interval,initialpoint,presicion);
 };
 module.exports.bestfit = bestfit ;
 module.exports.nsolveqn = nsolveqn ;

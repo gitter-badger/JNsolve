@@ -17,7 +17,7 @@ var interval =  [-20,20] ;
 var array_to_Query =  test_query  ;
 
 console.log(
-  'Solve the equation cos(x) + x = 0 with initial point equal to 0.5 in an interval [-10,10] with a number maximum of steps of 1000 and 1000 partitions on the calculus of numerical derivative.'
+'Solve the equation cos(x) + x = 0 with initial point random selected  in an interval [-100,100] with a number maximum of steps of 1000 and 1000 partitions on the calculus of numerical derivative.'
 );
 console.log('=> regulafalsi =', nsolve.regulafalsi(f,interval));
 
