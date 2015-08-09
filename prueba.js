@@ -19,16 +19,16 @@ var array_to_Query =  test_query  ;
 console.log(
   'Solve the equation cos(x) + x = 0 with initial point random selected  in an interval [-100,100] with a number maximum of steps of 1000 and 1000 partitions on the calculus of numerical derivative.'
 );
-console.log('=> regulafalsi =', nsolve.regulafalsi(f,interval));
+//console.log('=> regulafalsi =', nsolve.regulafalsi(f,interval));
 
 //console.log('=> bisection =', nsolve.bisection(f,interval));
 
 //console.log('=> fixedpoint =', nsolve.fixedpoint(f,initialpoint));
 
-console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval));
+console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval,initialpoint));
 
-console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder(f,interval));
-console.log('=> fit =', growth(test_array,test_query));
+//console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder(f,interval));
+//console.log('=> fit =', growth(test_array,test_query));
 
 
-console.log('=> nsolveqn =', nsolve.nsolveqn(f,interval));
+console.log('=> nsolveqn =', nsolve.nsolveqn(f,interval,initialpoint));

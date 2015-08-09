@@ -30,6 +30,10 @@ module.exports= function(array_tofit) {
     if(best_fit_error === 0){ best_fit_error = error ;}
     if(error < best_fit_error){ best_fit = fits_name[i]; best_fit_error = error; }
   }
-fit.best = { name :best_fit, error: best_fit_error} ;
+fit.best = { name :best_fit,
+             error: best_fit_error,
+             f : function (x) {
+               return f(x,best_fit,fit[best_fit].regression.equation) ;
+             }}
 return fit ;
 }

@@ -25,7 +25,7 @@ var methodN = {
     bisection :
     bisection
 }
-var nsolveqn =  function (g,interval,initialpoint,options) {
+module.exports.nsolveqn  =  function (g,interval,initialpoint,options) {
     options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Raphson' } ;
     options.presicion = options.presicion || 0.001 ;
     options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;
@@ -33,10 +33,10 @@ var nsolveqn =  function (g,interval,initialpoint,options) {
     options.method = options.method || 'Newton_Raphson'
         var presicion = options.presicion ;
         var method = options.method ;
-        return  methodN[method](g,interval,initialpoint,presicion);
+        return  methodN[method](g,interval,initialpoint,options);
 };
 module.exports.bestfit = bestfit ;
-module.exports.nsolveqn = nsolveqn ;
+
 module.exports.Xintersection = Xintersection ;
 module.exports.testRoot = testRoot ;
 module.exports.regulafalsi= regulafalsi ;
