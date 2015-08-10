@@ -6,7 +6,7 @@ var growth = require('./fit/bestfit'),
 var test_array= [[0,3.2],[1,4.6],[2,5.1],[4,6.9]];
 var test_query = [3.4, 4.8, 8, 11] ;
 function g(x) {
-  return 7+Math.pow(x,3);
+  return Math.pow(x,5)-16*Math.pow(x,4)+2*Math.pow(x,3)-20*Math.pow(x,2)+6*x-7-1.6*Math.exp(-4*x*x);
 }
 
 var f = g ;
@@ -16,7 +16,7 @@ var interval =  [-100,100] ;
 var array_to_Query =  test_query  ;
 
 console.log(
-  'Solve the equation cos(x) + x = 0 with initial point random selected  in an interval [-100,100] with a number maximum of steps of 1000 and 1000 partitions on the calculus of numerical derivative.'
+  'Solve the equation x⁵-16x⁴+2x³-20x²+6x-7-1.6 e^(-4x²) = 0 with initial point random selected  in an interval [-100,100] with a number maximum of steps of 1000 and 1000 partitions on the calculus of numerical derivative.'
 );
 //console.log('=> regulafalsi =', nsolve.regulafalsi(f,interval));
 
