@@ -1,9 +1,8 @@
 'use strict';
 var growth = require('./fit/bestfit'),
  nsolve = require('./index'),
- argv = require('yargs').argv,
- gulp = require('gulp'),
- prompt = require('prompt');
+ findroot = require('./lib/findroot')
+
 var test_array= [[0,3.2],[1,4.6],[2,5.1],[4,6.9]];
 var test_query = [3.4, 4.8, 8, 11] ;
 function g(x) {
@@ -32,3 +31,6 @@ console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval,initialpoint
 
 
 console.log('=> nsolveqn =', nsolve.nsolveqn(f,interval,initialpoint));
+
+
+console.log('=> findroot =', findroot(f,interval,initialpoint));
