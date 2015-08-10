@@ -1,7 +1,11 @@
 'use strict';
 var findroot = require('../lib/findroot'), length_get_x ,array_x=[],arrayX = [];
 
-
+/**
+ * 
+ * @param {function} h, {Array} get_x, {Array} interval.
+ * @return {Array} values of "x".
+ */
 module.exports = function (h, get_x, interval ) {
   var i, options =  {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000  };
   length_get_x = get_x.length ;

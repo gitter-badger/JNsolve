@@ -1,5 +1,5 @@
 'use strict';
-
+//The function to use in the fit.
 module.exports = function (x,nameF,equationFit) {
     var Fname =  {
         linear: function (x) {

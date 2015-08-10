@@ -8,6 +8,11 @@ var regression = require('regression'),
 
 
 fits_name = ['linear','exponential','logarithmic','power','polynomial'];
+/**
+ * This function calculate the best fit.
+ * @param {Array} array_tofit
+ * @return {Object} Best fit
+ */
 
 module.exports= function(array_tofit) {
   length_namefit = fits_name.length ;
@@ -15,10 +20,11 @@ module.exports= function(array_tofit) {
   length         = array_tofit.length -1 ;
   best_fit       = fits_name[0];
   best_fit_error = 0 ;
+  // Calculate the regression to every method available.
   for ( i = 0 ; i < length_namefit ; i++){
     fit[fits_name[i]] = {regression : regression(fits_name[i],array_Cloned)}  ;
     error = 0 ;
-
+// Calculate the error and find the best fit minimizing  error.
     for ( j = 0 ; j < length ; j++){
         x     = array_tofit[j][0] ;
         error = error +
