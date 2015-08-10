@@ -1,0 +1,17 @@
+'use strict';
+var findroot = require('../lib/findroot'), length_get_x ,array_x=[],arrayX = [];
+
+
+module.exports = function (h, get_x, interval ) {
+  var i, options =  {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000  };
+  length_get_x = get_x.length ;
+  for ( i = 0; i < length_get_x; i++) {
+     array_x[i] = [];
+
+     arrayX[i]= findroot(function (x) {
+                         return  h(x)-get_x[i] ;
+                         },interval, options) ;
+     if(arrayX[i]){array_x[i][0]=arrayX[i].Root;array_x[i][1]= get_x[i] ;}
+  }
+   return array_x;
+} ;
