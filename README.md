@@ -75,7 +75,7 @@ Is a method that calculate numerically the solution of `Function`=>f(x)=0 try in
 ```js
 JNsolve.nsolveqn(x+Math.cos(x),0.5,[0,1]) = 0.73952
 ```
-The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. The mothods available are RegulaFalsi, bisection,fixedpoint,Newton_Raphson_Higherorder, Newton_Raphson_Higherorder. The rest of routines for every method are availables:
+The `Object`is options object whose defaults are Options = { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. The mothods available are RegulaFalsi, bisection,fixedpoint,Newton_Raphson_Higherorder, Newton_Raphson_Higherorder. The rest of routines for every method are availables:
 
 #### `JNsolve#RegulaFalsi(Function,Array[,Object])`
 #### `JNsolve#bisection(Function, Array[,Object])`
