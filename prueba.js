@@ -27,7 +27,7 @@ console.log('=> fixedpoint =', nsolve.fixedpoint(f,initialpoint));
 //console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval,initialpoint));
 
 //console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder(f,interval));
-//console.log('=> fit =', growth(test_array,test_query));
+console.log('=> fit =', growth(test_array,test_query));
 
 
 //console.log('=> nsolveqn =', nsolve.nsolveqn(f,interval,initialpoint));
