@@ -3,8 +3,8 @@ var regression = require('regression'),
              _ = require('lodash'),
              f = require('./fitFunction'),
  fits_name, i ,j,fit={},x ,array_Cloned , length ,
- error = 0, best_fit='', best_fit_error, length_query,
- length_namefit ,array_answered= [], y ;
+ error = 0, best_fit='', best_fit_error,
+ length_namefit;
 
 
 fits_name = ['linear','exponential','logarithmic','power','polynomial'];
@@ -34,6 +34,6 @@ fit.best = { name :best_fit,
              error: best_fit_error,
              f : function (x) {
                return f(x,best_fit,fit[best_fit].regression.equation) ;
-             }}
+             }};
 return fit ;
-}
+};

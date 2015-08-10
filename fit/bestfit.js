@@ -1,11 +1,8 @@
 'use strict';
-var regression = require('regression'),
-             _ = require('lodash'),
-             f = require('./fitFunction'),
+var  f = require('./fitFunction'),
     betterfit = require('./betterfit'),
-    fits_name, i ,j,fit={},x ,array_Cloned , length ,
-    error = 0, best_fit='', best_fit_error, length_query,
-    length_namefit ,array_answered= [], y ;
+    fits_name, j,fit={},
+     length_query ,array_answered= [];
 
 
 fits_name = ['linear','exponential','logarithmic','power','polynomial'];
