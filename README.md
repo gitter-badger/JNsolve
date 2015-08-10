@@ -23,6 +23,7 @@ $ npm install jnsolve
 - **JNsolve Newton-Raphson**
 - **JNsolve Newton-Raphson-Higher-Order**
 - **JNsolve Derivative Numerical**
+- **JNsolve FindRoot**
 
 ## API
 
@@ -83,11 +84,36 @@ The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.
 #### `JNsolve#Newton_Raphson(Function,Array[, Number, Object])`
 #### `JNsolve#Newton_Raphson_Higherorder(Function,Array[, Number, Object])`
 
-in every case if x_0 is undefined, is taken from a random number  in interval `Array`=>[a,b]. All these methods return a object with properties Root, numSteps and method.
+in every case if x_0 is undefined, is taken from a random number  in interval `Array`=>[a,b]. All these methods return a object with properties Root, numSteps and method used.
+
+#### `JNsolve#findroot(Function, Array[,Number,Object])`
+Is a method that calculate numerically the solution of `Function`=>f(x)=0 try in the interval (`Array`=>[a,b]) beginning  on `Number`=>x_0 (initial point).
+
+```js
+JNsolve.nsolveqn(x+Math.cos(x),0.5,[0,1]) = 0.73952
+```
+The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. Here, findroot try find the root of function by all methods availables in the module.
 
 
 #### `JNsolve#bestfit(Array[,Array])`
-Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  `Array` = [z_1,z_2...z_m] argument is the query  made to be answered with the datas given. Return a object with the properties: ansArray, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError.
+Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  `Array` = [z_1,z_2...z_m] argument is the made query to be answered with the datas given. Return a object with the properties: ansArray, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError.
+
+```js
+JNsolve.bestfit([[0,3.2],[1,4.6],[2,5.1],[4,6.9]],[3.4, 4.8, 8, 11]) =
+{ ansArray: 
+   [ [ 3.4, 6.438909090909088 ],
+     [ 4.8, 7.38200000000001  ],
+     [ 8, 8.768181818181898   ],
+     [ 11, 9.09545454545474   ] ],
+  fitUsed         : 'polynomial',
+  fitEquationUsed : 'y = -0.05x^2 + 1.1x + 3.3',
+  fitParamsUsed   : [ 3.2954545454545507, 1.1022727272727162, -0.05227272727272471 ],
+  fitPointsUsed   : [],
+  fitWithError    : 0.1917908927881452,
+} 
+```
+
+
 
 ##Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style.
