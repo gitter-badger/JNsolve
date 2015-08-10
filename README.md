@@ -83,7 +83,7 @@ The `Object`is options object whose defaults are Options = { npoints_DNumeric : 
 #### `JNsolve#Newton_Raphson(Function,Array[, Number, Object])`
 #### `JNsolve#Newton_Raphson_Higherorder(Function,Array[, Number, Object])`
 
-in every case if x_0 is undefined, is taken from a random number  in interval `Array`=>[a,b]. All these methods teurn a object with properties Root, numSteps and method.
+in every case if x_0 is undefined, is taken from a random number  in interval `Array`=>[a,b]. All these methods return a object with properties Root, numSteps and method.
 
 
 #### `JNsolve#bestfit(Array[,Array])`
