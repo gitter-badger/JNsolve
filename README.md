@@ -95,22 +95,37 @@ JNsolve.nsolveqn(x+Math.cos(x),0.5,[0,1]) = 0.73952
 The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. Here, findroot try find the root of function by all methods availables in the module.
 
 
-#### `JNsolve#bestfit(Array[,Array])`
-Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  `Array` = [z_1,z_2...z_m] argument is the made query to be answered with the datas given. Return a object with the properties: ansArray, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError.
+#### `JNsolve#bestfit(Array[,Array,Array])`
+Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  `Array` = [z_1,z_2...z_m] argument is the made query to be answered with the datas given, the third argument are the values of "y" for which is queried the values of "x" respective. Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.
 
 ```js
-JNsolve.bestfit([[0,3.2],[1,4.6],[2,5.1],[4,6.9]],[3.4, 4.8, 8, 11]) =
-{ ansArray: 
-   [ [ 3.4, 6.438909090909088 ],
-     [ 4.8, 7.38200000000001  ],
-     [ 8, 8.768181818181898   ],
-     [ 11, 9.09545454545474   ] ],
-  fitUsed         : 'polynomial',
-  fitEquationUsed : 'y = -0.05x^2 + 1.1x + 3.3',
-  fitParamsUsed   : [ 3.2954545454545507, 1.1022727272727162, -0.05227272727272471 ],
-  fitPointsUsed   : [],
-  fitWithError    : 0.1917908927881452,
-} 
+JNsolve.bestfit([[0,1.1],[1,4.6],[2,1.9],[4,15]],[3.4, 4.8, 8, 11], [8,8.5,15,20]) =
+fit = { ans_ofY: 
+   [ [ 3.4, 10.503636363636366 ],
+     [ 4.8, 21.457999999999984 ],
+     [ 8, 62.92272727272717 ],
+     [ 11, 122.55181818181795 ] ],
+  ans_ofX: 
+   [ [ 2.9665881626844426, 8 ],
+     [ 3.0592101464091335, 8.5 ],
+     [ 4.043974243768653, 15 ],
+     [ 4.641597409834032, 20 ] ],
+  fitUsed: 'polynomial',
+  fitEquationUsed: 'y = 1.12x^2 + -1.33x + 2.11',
+  fitParamsUsed: [ 2.1118181818181747, -1.3259090909090778, 1.1159090909090879 ],
+  fitPointsUsed: 
+   [ [ 0, 2.1118181818181747 ],
+     [ 1, 1.9018181818181847 ],
+     [ 2, 3.9236363636363705 ],
+     [ 4, 14.662727272727269 ] ],
+  fitWithError: 2.0329834635543396,
+  fit: 
+   { linear: { regression: [Object], error: 2.8540621486399553 },
+     exponential: { regression: [Object], error: 2.094639809897245 },
+     logarithmic: { regression: [Object], error: NaN },
+     power: { regression: [Object], error: NaN },
+     polynomial: { regression: [Object], error: 2.0329834635543396 },
+     best: { name: 'polynomial', error: 2.0329834635543396, f: [Function] } } }
 ```
 
 
