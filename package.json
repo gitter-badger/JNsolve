@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "gulp" : "gulp"
+    "gulp" : "gulp test"
   },
   "repository": {
     "type": "git",
