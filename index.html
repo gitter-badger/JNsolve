@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jnsolve by 4yopping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Jnsolve</h1>
+      <h2 class="project-tagline">Solves numerically equations and makes best fit of data given.</h2>
+      <a href="https://github.com/4yopping/JNsolve" class="btn">View on GitHub</a>
+      <a href="https://github.com/4yopping/JNsolve/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/4yopping/JNsolve/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jnsolve" class="anchor" href="#jnsolve" aria-hidden="true"><span class="octicon octicon-link"></span></a>JNsolve</h1>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>Solve numerically equations and calculate best fit to a data array given, also provides a series of numeric routines usable.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-bash"><pre>$ npm install jnsolve</pre></div>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li><strong>JNsolve bestfit</strong></li>
+<li><strong>JNsolve regulafalsi</strong></li>
+<li><strong>JNsolve fixedpoint</strong></li>
+<li><strong>JNsolve bisection</strong></li>
+<li><strong>JNsolve Newton-Raphson</strong></li>
+<li><strong>JNsolve Newton-Raphson-Higher-Order</strong></li>
+<li><strong>JNsolve Derivative Numerical</strong></li>
+<li><strong>JNsolve FindRoot</strong></li>
+</ul>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<h4>
+<a id="jnsolve-1" class="anchor" href="#jnsolve-1" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve</code>
+</h4>
+
+<p>Initialize <code>JNsolve</code></p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> JNsolve <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>JNsolve<span class="pl-pds">'</span></span>);</pre></div>
+
+<h4>
+<a id="jnsolved" class="anchor" href="#jnsolved" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#D</code>
+</h4>
+
+<p>Object with differents numerics methods to calculate the derivative of function given.</p>
+
+<h5>
+<a id="jnsolvednoffunctionnumberarray" class="anchor" href="#jnsolvednoffunctionnumberarray" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#D#Nof(Function,Number,Array)</code>
+</h5>
+
+<p>Constructor that generates the numeric derivative of <code>Function</code> with a  <code>Number</code> given of divisions in an interval ( <code>Array</code> =&gt; [a,b]).</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">D</span>.<span class="pl-c1">Nof</span>(f,<span class="pl-c1">1000</span>,[<span class="pl-c1">2</span>,<span class="pl-c1">7</span>])</pre></div>
+
+<h5>
+<a id="jnsolvednoff_x" class="anchor" href="#jnsolvednoff_x" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#D#Nof#f_x</code>
+</h5>
+
+<p>Is a instance method what is the derivative numerical of  <code>Function</code> with a   <code>Number</code> given of divisions in an interval (  <code>Array</code> =&gt; [a,b]).</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">D</span>.<span class="pl-c1">Nof</span>(f,<span class="pl-c1">1000</span>,[<span class="pl-c1">2</span>,<span class="pl-c1">7</span>]).<span class="pl-c1">f_x</span>(<span class="pl-c1">3</span>)</pre></div>
+
+<p>is a aproximation to the derivative of f (df_dx) on 3 with the 1000 divisions in the interval [2,7].</p>
+
+<h5>
+<a id="jnsolvedlinear_interpolationarray" class="anchor" href="#jnsolvedlinear_interpolationarray" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#D#linear_interpolation(Array)</code>
+</h5>
+
+<p>Is a constructor that generates the numeric linear interpolation of data given in <code>Array</code>= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] in the interval [x_1,x_n].</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">D</span>.<span class="pl-c1">linear_interpolation</span>([[<span class="pl-c1">0</span>,<span class="pl-c1">3.2</span>],[<span class="pl-c1">1</span>,<span class="pl-c1">4.6</span>],[<span class="pl-c1">2</span>,<span class="pl-c1">5.1</span>],[<span class="pl-c1">4</span>,<span class="pl-c1">6.9</span>]])</pre></div>
+
+<h5>
+<a id="jnsolvedlinear_interpolationarrayfunction_interpolated" class="anchor" href="#jnsolvedlinear_interpolationarrayfunction_interpolated" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#D#linear_interpolation(Array)#function_interpolated</code>
+</h5>
+
+<p>Is a instance method what is the interpolated function of <code>Array</code> given.</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">D</span>.<span class="pl-c1">linear_interpolation</span>([[<span class="pl-c1">0</span>,<span class="pl-c1">3.2</span>],[<span class="pl-c1">1</span>,<span class="pl-c1">4.6</span>],[<span class="pl-c1">2</span>,<span class="pl-c1">5.1</span>],[<span class="pl-c1">4</span>,<span class="pl-c1">6.9</span>]]).<span class="pl-c1">function_interpolated</span>(<span class="pl-c1">2.5</span>)</pre></div>
+
+<p>Is a aproximation interpolated to the <code>Array</code> = [[0,3.2],[1,4.6],[2,5.1],[4,6.9]].</p>
+
+<h4>
+<a id="jnsolvensolveqnfunction-arraynumberobject" class="anchor" href="#jnsolvensolveqnfunction-arraynumberobject" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#nsolveqn(Function, Array[,Number,Object])</code>
+</h4>
+
+<p>Is a method that calculate numerically the solution of <code>Function</code>=&gt;f(x)=0 try in the interval (<code>Array</code>=&gt;[a,b]) beginning  on <code>Number</code>=&gt;x_0 (initial point).</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">nsolveqn</span>(x<span class="pl-k">+</span><span class="pl-c1">Math</span>.<span class="pl-c1">cos</span>(x),<span class="pl-c1">0.5</span>,[<span class="pl-c1">0</span>,<span class="pl-c1">1</span>]) <span class="pl-k">=</span> <span class="pl-c1">0.73952</span></pre></div>
+
+<p>The <code>Object</code>is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. The mothods available are RegulaFalsi, bisection,fixedpoint,Newton_Raphson_Higherorder, Newton_Raphson_Higherorder. The rest of routines for every method are availables:</p>
+
+<h4>
+<a id="jnsolveregulafalsifunctionarrayobject" class="anchor" href="#jnsolveregulafalsifunctionarrayobject" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#RegulaFalsi(Function,Array[,Object])</code>
+</h4>
+
+<h4>
+<a id="jnsolvebisectionfunction-arrayobject" class="anchor" href="#jnsolvebisectionfunction-arrayobject" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#bisection(Function, Array[,Object])</code>
+</h4>
+
+<h4>
+<a id="jnsolvefixedpointfunctionnumberobject" class="anchor" href="#jnsolvefixedpointfunctionnumberobject" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#fixedpoint(Function,Number[,Object])</code>
+</h4>
+
+<h4>
+<a id="jnsolvenewton_raphsonfunctionarray-number-object" class="anchor" href="#jnsolvenewton_raphsonfunctionarray-number-object" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#Newton_Raphson(Function,Array[, Number, Object])</code>
+</h4>
+
+<h4>
+<a id="jnsolvenewton_raphson_higherorderfunctionarray-number-object" class="anchor" href="#jnsolvenewton_raphson_higherorderfunctionarray-number-object" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#Newton_Raphson_Higherorder(Function,Array[, Number, Object])</code>
+</h4>
+
+<p>in every case if x_0 is undefined, is taken from a random number  in interval <code>Array</code>=&gt;[a,b]. All these methods return a object with properties Root, numSteps and method used.</p>
+
+<h4>
+<a id="jnsolvefindrootfunction-arraynumberobject" class="anchor" href="#jnsolvefindrootfunction-arraynumberobject" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#findroot(Function, Array[,Number,Object])</code>
+</h4>
+
+<p>Is a method that calculate numerically the solution of <code>Function</code>=&gt;f(x)=0 try in the interval (<code>Array</code>=&gt;[a,b]) beginning  on <code>Number</code>=&gt;x_0 (initial point).</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">nsolveqn</span>(x<span class="pl-k">+</span><span class="pl-c1">Math</span>.<span class="pl-c1">cos</span>(x),<span class="pl-c1">0.5</span>,[<span class="pl-c1">0</span>,<span class="pl-c1">1</span>]) <span class="pl-k">=</span> <span class="pl-c1">0.73952</span></pre></div>
+
+<p>The <code>Object</code>is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. Here, findroot try find the root of function by all methods availables in the module.</p>
+
+<h4>
+<a id="jnsolvebestfitarrayarrayarray" class="anchor" href="#jnsolvebestfitarrayarrayarray" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>JNsolve#bestfit(Array[,Array,Array])</code>
+</h4>
+
+<p>Caculate the best fit to de first <code>Array</code>= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  <code>Array</code> = [z_1,z_2...z_m] argument is the made query to be answered with the datas given, the third argument are the values of "y" for which is queried the values of "x" respective. Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.</p>
+
+<div class="highlight highlight-js"><pre>JNsolve.<span class="pl-c1">bestfit</span>([[<span class="pl-c1">0</span>,<span class="pl-c1">1.1</span>],[<span class="pl-c1">1</span>,<span class="pl-c1">4.6</span>],[<span class="pl-c1">2</span>,<span class="pl-c1">1.9</span>],[<span class="pl-c1">4</span>,<span class="pl-c1">15</span>]],[<span class="pl-c1">3.4</span>, <span class="pl-c1">4.8</span>, <span class="pl-c1">8</span>, <span class="pl-c1">11</span>], [<span class="pl-c1">8</span>,<span class="pl-c1">8.5</span>,<span class="pl-c1">15</span>,<span class="pl-c1">20</span>]) <span class="pl-k">=</span>
+fit <span class="pl-k">=</span> { ans_ofY<span class="pl-k">:</span> 
+   [ [ <span class="pl-c1">3.4</span>, <span class="pl-c1">10.503636363636366</span> ],
+     [ <span class="pl-c1">4.8</span>, <span class="pl-c1">21.457999999999984</span> ],
+     [ <span class="pl-c1">8</span>, <span class="pl-c1">62.92272727272717</span> ],
+     [ <span class="pl-c1">11</span>, <span class="pl-c1">122.55181818181795</span> ] ],
+  ans_ofX<span class="pl-k">:</span> 
+   [ [ <span class="pl-c1">2.9665881626844426</span>, <span class="pl-c1">8</span> ],
+     [ <span class="pl-c1">3.0592101464091335</span>, <span class="pl-c1">8.5</span> ],
+     [ <span class="pl-c1">4.043974243768653</span>, <span class="pl-c1">15</span> ],
+     [ <span class="pl-c1">4.641597409834032</span>, <span class="pl-c1">20</span> ] ],
+  fitUsed<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>polynomial<span class="pl-pds">'</span></span>,
+  fitEquationUsed<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>y = 1.12x^2 + -1.33x + 2.11<span class="pl-pds">'</span></span>,
+  fitParamsUsed<span class="pl-k">:</span> [ <span class="pl-c1">2.1118181818181747</span>, <span class="pl-k">-</span><span class="pl-c1">1.3259090909090778</span>, <span class="pl-c1">1.1159090909090879</span> ],
+  fitPointsUsed<span class="pl-k">:</span> 
+   [ [ <span class="pl-c1">0</span>, <span class="pl-c1">2.1118181818181747</span> ],
+     [ <span class="pl-c1">1</span>, <span class="pl-c1">1.9018181818181847</span> ],
+     [ <span class="pl-c1">2</span>, <span class="pl-c1">3.9236363636363705</span> ],
+     [ <span class="pl-c1">4</span>, <span class="pl-c1">14.662727272727269</span> ] ],
+  fitWithError<span class="pl-k">:</span> <span class="pl-c1">2.0329834635543396</span>,
+  fit<span class="pl-k">:</span> 
+   { linear<span class="pl-k">:</span> { regression<span class="pl-k">:</span> [<span class="pl-c1">Object</span>], error<span class="pl-k">:</span> <span class="pl-c1">2.8540621486399553</span> },
+     exponential<span class="pl-k">:</span> { regression<span class="pl-k">:</span> [<span class="pl-c1">Object</span>], error<span class="pl-k">:</span> <span class="pl-c1">2.094639809897245</span> },
+     logarithmic<span class="pl-k">:</span> { regression<span class="pl-k">:</span> [<span class="pl-c1">Object</span>], error<span class="pl-k">:</span> <span class="pl-c1">NaN</span> },
+     power<span class="pl-k">:</span> { regression<span class="pl-k">:</span> [<span class="pl-c1">Object</span>], error<span class="pl-k">:</span> <span class="pl-c1">NaN</span> },
+     polynomial<span class="pl-k">:</span> { regression<span class="pl-k">:</span> [<span class="pl-c1">Object</span>], error<span class="pl-k">:</span> <span class="pl-c1">2.0329834635543396</span> },
+     best<span class="pl-k">:</span> { name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>polynomial<span class="pl-pds">'</span></span>, error<span class="pl-k">:</span> <span class="pl-c1">2.0329834635543396</span>, f<span class="pl-k">:</span> [<span class="pl-c1">Function</span>] } } }</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>In lieu of a formal styleguide, take care to maintain the existing coding style.
+Add unit tests for any new or changed functionality. Lint and test your code.</p>
+
+<h2>
+<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licence</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Jesús Edel Cereceres, 4yopping and all the related trademarks</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/4yopping/JNsolve">Jnsolve</a> is maintained by <a href="https://github.com/4yopping">4yopping</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-65980128-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
