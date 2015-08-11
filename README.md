@@ -1,5 +1,5 @@
 # JNsolve
-
+- [![Build Status](https://travis-ci.org/4yopping/JNsolve.svg?branch=master)](https://travis-ci.org/4yopping/JNsolve.svg?branch=master)
 
 ## Introduction
 
