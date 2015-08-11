@@ -1,6 +1,8 @@
 # JNsolve
 [![Build Status](https://travis-ci.org/4yopping/JNsolve.svg?branch=master)](https://travis-ci.org/4yopping/JNsolve) [![Inline docs](http://inch-ci.org/github/4yopping/JNsolve.svg?branch=master)](http://inch-ci.org/github/4yopping/JNsolve)
 
+**[Join us on Slack](http://jnsolve.slack.com)**
+
 ## Introduction
 
 Solve numerically equations and calculate best fit to a data array given, also provides a series of numeric routines usable.
