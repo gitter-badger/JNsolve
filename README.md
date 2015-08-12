@@ -140,7 +140,7 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 ##Licence
 The MIT License (MIT)
 
-Copyright (c) 2015 Jesús Edel Cereceres with Andres Gonzalez and Marco Godinez as collaborators, 4yopping and all the related trademarks
+Copyright (c) 2015 Jesús Edel Cereceres with Andrés González and Marco Godínez as collaborators, 4yopping and all the related trademarks
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
