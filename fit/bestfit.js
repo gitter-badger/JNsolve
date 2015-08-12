@@ -4,7 +4,7 @@ var  f = require('./fitFunction'),
      getx = require('./getx'),j,fit={},
      length_query ,array_y= [] ,array_x=[],interval;
 
-/**
+/** @function
  * This function calculate the best fit to a Array given and make
  * a calculus of second argument with get_y and first argument with
  * get_x.

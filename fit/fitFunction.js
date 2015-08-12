@@ -1,5 +1,10 @@
 'use strict';
-//The function to use in the fit.
+/**@function
+ * The function to use in the fit.
+ * @param {Number} variable x, {String} nameF, {Array} equationFit.
+ * @return {Function}.
+ */
+
 module.exports = function (x,nameF,equationFit) {
     var Fname =  {
         linear: function (x) {

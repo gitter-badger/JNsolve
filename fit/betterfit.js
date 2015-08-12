@@ -8,7 +8,7 @@ var regression = require('regression'),
 
 
 fits_name = ['linear','exponential','logarithmic','power','polynomial'];
-/**
+/** @function
  * This function calculate the best fit.
  * @param {Array} array_tofit
  * @return {Object} Best fit
@@ -36,6 +36,7 @@ module.exports= function(array_tofit) {
     if(best_fit_error === 0){ best_fit_error = error ;}
     if(error < best_fit_error){ best_fit = fits_name[i]; best_fit_error = error; }
   }
+  // Define the best fit found.
 fit.best = { name :best_fit,
              error: best_fit_error,
              f : function (x) {

@@ -1,8 +1,8 @@
 'use strict';
 var findroot = require('../lib/findroot'), length_get_x ,array_x=[],arrayX = [];
 
-/**
- * 
+/**@function
+ * This function solve the equation h(x)=y_i. The y_i are given into get_x.
  * @param {function} h, {Array} get_x, {Array} interval.
  * @return {Array} values of "x".
  */
@@ -11,7 +11,7 @@ module.exports = function (h, get_x, interval ) {
   length_get_x = get_x.length ;
   for ( i = 0; i < length_get_x; i++) {
      array_x[i] = [];
-
+// Find the root using the module findroot.
      arrayX[i]= findroot(function (x) {
                          return  h(x)-get_x[i] ;
                          },interval, options) ;

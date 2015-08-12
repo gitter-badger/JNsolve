@@ -12,7 +12,7 @@ function g(x) {
 
 var f = g ;
 var initialpoint =  6 ;
-var interval =  [-0,20] ;
+var interval =  [0,20] ;
 
 
 console.log(
