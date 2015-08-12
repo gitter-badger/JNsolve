@@ -102,12 +102,12 @@ Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] ar
 
 ```js
 JNsolve.bestfit([[0,1.1],[1,4.6],[2,1.9],[4,15]],[3.4, 4.8, 8, 11], [8,8.5,15,20]) =
-fit = { ans_ofY: 
+fit = { ans_ofY:
    [ [ 3.4, 10.503636363636366 ],
      [ 4.8, 21.457999999999984 ],
      [ 8, 62.92272727272717 ],
      [ 11, 122.55181818181795 ] ],
-  ans_ofX: 
+  ans_ofX:
    [ [ 2.9665881626844426, 8 ],
      [ 3.0592101464091335, 8.5 ],
      [ 4.043974243768653, 15 ],
@@ -115,13 +115,13 @@ fit = { ans_ofY:
   fitUsed: 'polynomial',
   fitEquationUsed: 'y = 1.12x^2 + -1.33x + 2.11',
   fitParamsUsed: [ 2.1118181818181747, -1.3259090909090778, 1.1159090909090879 ],
-  fitPointsUsed: 
+  fitPointsUsed:
    [ [ 0, 2.1118181818181747 ],
      [ 1, 1.9018181818181847 ],
      [ 2, 3.9236363636363705 ],
      [ 4, 14.662727272727269 ] ],
   fitWithError: 2.0329834635543396,
-  fit: 
+  fit:
    { linear: { regression: [Object], error: 2.8540621486399553 },
      exponential: { regression: [Object], error: 2.094639809897245 },
      logarithmic: { regression: [Object], error: NaN },
@@ -129,7 +129,7 @@ fit = { ans_ofY:
      polynomial: { regression: [Object], error: 2.0329834635543396 },
      best: { name: 'polynomial', error: 2.0329834635543396, f: [Function] } } }
 ```
-
+![Plot Data with Best fit](./plot.jpeg)
 
 
 ##Contributing

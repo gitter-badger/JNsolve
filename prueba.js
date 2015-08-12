@@ -3,7 +3,7 @@ var growth = require('./fit/bestfit'),
  nsolve = require('./index'),
  findroot = require('./lib/findroot');
 
-var test_array= [[0,1.1],[1,4.6],[2,1.9],[4,15]];
+var test_array= [[1.2,1.1],[2.1,3.1],[3.02,1.9],[4.9,4.5]];
 var test_query = [3.4, 4.8, 8, 11] ;
 var test_y     = [8,8.5,15,20] ;
 function g(x) {
