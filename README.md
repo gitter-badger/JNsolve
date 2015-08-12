@@ -99,6 +99,8 @@ The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.
 
 #### `JNsolve#bestfit(Array[,Array,Array])`
 ![Plot Data with Best fit](./plot.jpeg)
+
+
 Caculate the best fit using the first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument as data input, the second  `Array` = [z_1,z_2...z_m] argument are the values of x's for which is necessary calculate their y`s values respectively, the third argument are the values of "y" for which is queried the values of "x". Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.
 
 ```js
