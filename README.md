@@ -98,7 +98,8 @@ The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.
 
 
 #### `JNsolve#bestfit(Array[,Array,Array])`
-Caculate the best fit to de first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument, the second  `Array` = [z_1,z_2...z_m] argument is the made query to be answered with the datas given, the third argument are the values of "y" for which is queried the values of "x" respective. Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.
+![Plot Data with Best fit](./plot.jpeg)
+Caculate the best fit using the first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument as data input, the second  `Array` = [z_1,z_2...z_m] argument are the values of x's for which is necessary calculate their y`s values respectively, the third argument are the values of "y" for which is queried the values of "x". Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.
 
 ```js
 JNsolve.bestfit([[0,1.1],[1,4.6],[2,1.9],[4,15]],[3.4, 4.8, 8, 11], [8,8.5,15,20]) =
@@ -129,7 +130,7 @@ fit = { ans_ofY:
      polynomial: { regression: [Object], error: 2.0329834635543396 },
      best: { name: 'polynomial', error: 2.0329834635543396, f: [Function] } } }
 ```
-![Plot Data with Best fit](./plot.jpeg)
+
 
 
 ##Contributing
