@@ -92,7 +92,7 @@ in every case if x_0 is undefined, is taken from a random number  in interval `A
 Is a method that calculate numerically the solution of `Function`=>f(x)=0 try in the interval (`Array`=>[a,b]) beginning  on `Number`=>x_0 (initial point).
 
 ```js
-JNsolve.nsolveqn(x+Math.cos(x),0.5,[0,1]) = 0.73952
+JNsolve.findroot(x+Math.cos(x),0.5,[0,1]) = 0.73952
 ```
 The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. Here, findroot try find the root of function by all methods availables in the module.
 
