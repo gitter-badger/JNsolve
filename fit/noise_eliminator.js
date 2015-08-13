@@ -13,9 +13,12 @@ arrayflattened =_.clone(arraynoisy,true) ;
 for ( i = 0; i < length; i++) {
   array[j][i] = arraynoisy[i][1] ;
 }
+// Calculate the Central tendency values.
 mean = numbers.statistic.mean(array[j]);
 sigma = numbers.statistic.standardDev(array[j]);
+// Dispersion limit
 limit = 3.5*sigma ;
+//Loop to filter noisy data.
 while(n !== 0 ){
   i=0 ;
   while ( arrayflattened[i] ) {
