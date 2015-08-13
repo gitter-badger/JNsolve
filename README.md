@@ -97,11 +97,11 @@ JNsolve.findroot(x+Math.cos(x),0.5,[0,1]) = 0.73952
 The `Object`is default options and are { npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Rapshon' }. Here, findroot try find the root of function by all methods availables in the module.
 
 
-#### `JNsolve#bestfit(Array[,Array,Array])`
+#### `JNsolve#bestfit(Array[,Array,Array,Object])`
 ![Plot Data with Best fit](./plot.jpeg)
 
 
-Caculate the best fit using the first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument as data input, the second  `Array` = [z_1,z_2...z_m] argument are the values of x's for which is necessary calculate their y`s values respectively, the third argument are the values of "y" for which is queried the values of "x". Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.
+Caculate the best fit using the first `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] argument as data input, the second  `Array` = [z_1,z_2...z_m] argument are the values of x's for which is necessary calculate their y`s values respectively, the third argument are the values of "y" for which is queried the values of "x". The properties of options object are smoothing (default = True), noiseeliminate (default = True), smoothingmethod (default ='exponential' only by moment), alpha (default = 0.8). Return a object with the properties: ans_ofY,ans_ofX, fitUsed, fitEquationUsed, fitParamsUsed, fitPointsUsed, fitWithError and fit.
 
 ```js
 JNsolve.bestfit([[0,1.1],[1,4.6],[2,1.9],[4,15]],[3.4, 4.8, 8, 11], [8,8.5,15,20]) =
