@@ -15,21 +15,24 @@ var  f = require('./fitFunction'),
  */
 module.exports = function(_arrayFit, get_y, get_x,options ) {
    options = options ||
-   {smoothing : true, noiseeliminate : true,
+   {smoothing : false, noiseeliminate : false,
      smoothingmethod :'exponential',alpha : 0.8 } ;
-   options.smoothing = options.smoothing || true ;
-   options.noiseeliminate = options.noiseeliminate || true ;
+   options.smoothing = options.smoothing || false ;
+   options.noiseeliminate = options.noiseeliminate || false ;
    options.smoothingmethod = options.smoothingmethod || 'exponential' ;
    options.alpha = options.alpha || 0.8 ;
-   var smoothing = options.smoothing, alpha = options.alpha, smoothingmethod = options.smoothingmethod,noiseeliminate= options.noiseeliminate,arrayFit,__arrayFit ;
+   var smoothing = options.smoothing, alpha = options.alpha, smoothingmethod = options.smoothingmethod,noiseeliminate= options.noiseeliminate,arrayFit ;
    // The noise is elimanated from data.
+   console.log('noiseeliminate =',noiseeliminate);
    if(noiseeliminate){
-     __arrayFit = noiseeliminatedata(_arrayFit,{method :smoothingmethod, alpha : alpha});
+     _arrayFit = noiseeliminatedata(_arrayFit,{method :smoothingmethod, alpha : alpha});
    }
    // The data are smoothed.
+   console.log('smoothing =',smoothing);
    if(smoothing){
-     arrayFit = smoothingdata(__arrayFit,{method :smoothingmethod, alpha : alpha});
+     _arrayFit = smoothingdata(_arrayFit,{method :smoothingmethod, alpha : alpha});
    }
+   arrayFit = _arrayFit ;
    var  a = arrayFit[0][0] ,b =arrayFit[arrayFit.length-1][0] ;
    get_y = get_y || [] ;
    length_query = get_y.length ;
@@ -47,9 +50,9 @@ module.exports = function(_arrayFit, get_y, get_x,options ) {
    }
    // Choices the best  interval to solve the equation fit(x)=get_x.
    if( fit.best.name  !== 'logarithmic'){
-     interval = [a,b+6*(b-a)];
+     interval = [a-6*(b-a),b+6*(b-a)];
    } else {
-     interval = [0.000001,b+5*(b-a)];
+     interval = [a<0 ? 0.01 : a,b+5*(b-a)];
    }
   // Obtain the values "x" using get_x.
    array_x = getx(fit.best.f,get_x, interval) ;
@@ -58,7 +61,7 @@ module.exports = function(_arrayFit, get_y, get_x,options ) {
          fitUsed  : fit.best.name ,
          fitEquationUsed : fit[fit.best.name].regression.string,
          fitParamsUsed   : fit[fit.best.name].regression.equation,
-         fitPointsUsed   : fit[fit.best.name].regression.points,
+         fitPointsUsed   : arrayFit,
          fitWithError    : fit.best.error,
          fit             : fit
          };

@@ -3,16 +3,16 @@ var growth = require('./fit/bestfit'),
  nsolve = require('./index'),
  findroot = require('./lib/findroot');
 
-var test_array= [[1.2,1.1],[2.1,3.1],[3.02,1.9],[4.9,4.5]];
-var test_query = [3.4, 4.8, 8, 11] ;
-var test_y     = [8,8.5,15,20] ;
+var test_array= [[0,40],[1,48],[3,56],[4,70]];
+     var test_query = [3.4, 4.8, 8, 11] ;
+     var test_y     = [75,83,99,105] ;
 function g(x) {
-  return  x*x-120;
+  return  Math.cos(x)-x;
 }
 
 var f = g ;
-var initialpoint =  6 ;
-var interval =  [0,20] ;
+var initialpoint =  0.5 ;
+    var interval =  [-3,5] ;
 
 
 console.log(
@@ -23,9 +23,9 @@ console.log('=> regulafalsi =', nsolve.regulafalsi(f,interval));
 
 console.log('=> fixedpoint =', nsolve.fixedpoint(f,initialpoint));
 
-//console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval,initialpoint));
+console.log('=> Newton_Raphson =', nsolve.Newton_Raphson(f,interval,initialpoint));
 
-//console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder(f,interval));
+console.log('=> Newton_Raphson_Higherorder =', nsolve.Newton_Raphson_Higherorder(f,interval));
 console.log('=> fit =', growth(test_array,test_query,test_y));
 
 

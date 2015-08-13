@@ -4,7 +4,7 @@
   "description": "Solve equations using numerical methods ",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha ./test/test",
     "gulp": "gulp test"
   },
   "repository": {
@@ -28,7 +28,8 @@
   "dependencies": {
     "lodash": "^3.10.1",
     "numbers": "^0.6.0",
-    "regression": "^1.2.1"
+    "regression": "^1.2.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
