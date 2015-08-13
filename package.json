@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "gulp" : "gulp test"
+    "gulp": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/4yopping/jnsolve#readme",
   "dependencies": {
     "lodash": "^3.10.1",
+    "numbers": "^0.6.0",
     "regression": "^1.2.1"
   },
   "devDependencies": {

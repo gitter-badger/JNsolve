@@ -1,6 +1,8 @@
 'use strict';
 var  f = require('./fitFunction'),
-    betterfit = require('./betterfit'),
+     betterfit = require('./betterfit'),
+     smoothingdata = require('./smoothingdata'),
+     noiseeliminatedata = require('./noise_eliminator'),
      getx = require('./getx'),j,fit={},
      length_query ,array_y= [] ,array_x=[],interval;
 
@@ -11,7 +13,23 @@ var  f = require('./fitFunction'),
  * @param {Array} arrayFit, {Array} get_y,  {Array} get_x
  * @return {Object} fit
  */
-module.exports = function(arrayFit, get_y, get_x ) {
+module.exports = function(_arrayFit, get_y, get_x,options ) {
+   options = options ||
+   {smoothing : true, noiseeliminate : true,
+     smoothingmethod :'exponential',alpha : 0.8 } ;
+   options.smoothing = options.smoothing || true ;
+   options.noiseeliminate = options.noiseeliminate || true ;
+   options.smoothingmethod = options.smoothingmethod || 'exponential' ;
+   options.alpha = options.alpha || 0.8 ;
+   var smoothing = options.smoothing, alpha = options.alpha, smoothingmethod = options.smoothingmethod,noiseeliminate= options.noiseeliminate,arrayFit,__arrayFit ;
+   // The noise is elimanated from data.
+   if(noiseeliminate){
+     __arrayFit = noiseeliminatedata(_arrayFit,{method :smoothingmethod, alpha : alpha});
+   }
+   // The data are smoothed.
+   if(smoothing){
+     arrayFit = smoothingdata(__arrayFit,{method :smoothingmethod, alpha : alpha});
+   }
    var  a = arrayFit[0][0] ,b =arrayFit[arrayFit.length-1][0] ;
    get_y = get_y || [] ;
    length_query = get_y.length ;
