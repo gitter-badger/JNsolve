@@ -14,11 +14,12 @@ var  f = require('./fitFunction'),
  * @return {Object} fit
  */
 module.exports = function(_arrayFit, get_y, get_x,options ) {
+    if(!_arrayFit){return ;}
    options = options ||
-   {smoothing : false, noiseeliminate : false,
+   {smoothing : true, noiseeliminate : true,
      smoothingmethod :'exponential',alpha : 0.8 } ;
-   options.smoothing = options.smoothing || false ;
-   options.noiseeliminate = options.noiseeliminate || false ;
+    if(options.smoothing === undefined){options.smoothing = true ;}
+    if(options.noiseeliminate === undefined){options.noiseeliminate = true;}
    options.smoothingmethod = options.smoothingmethod || 'exponential' ;
    options.alpha = options.alpha || 0.8 ;
    var smoothing = options.smoothing, alpha = options.alpha, smoothingmethod = options.smoothingmethod,noiseeliminate= options.noiseeliminate,arrayFit ;

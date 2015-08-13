@@ -15,6 +15,7 @@
   findroot  = require('./lib/findroot') ;
 
 module.exports.nsolveqn  =  function (g,interval,initialpoint,options) {
+    if(!g){return ;}
     options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Raphson' } ;
     options.presicion = options.presicion || 0.001 ;
     options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;

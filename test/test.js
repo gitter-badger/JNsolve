@@ -12,7 +12,7 @@ var test_array= [[0,40],[1,48],[3,56],[4,70]];
     var initialpoint =  0.5 ;
     var interval =  [-3,5] ;
 // Defining a suite of tests
-var fitted = JNsolve.bestfit(test_array,test_query,test_y);
+var fitted = JNsolve.bestfit(test_array,test_query,test_y,{smoothing : false, noiseeliminate : false });
 Number.prototype.truncate = function (n) {
   return Math.floor(this*Math.pow(10,n))/Math.pow(10,n);
 } ;
@@ -86,7 +86,7 @@ describe('JNsolve Module numeric values function test.', function () {
 });
 
 
-describe('derivative numeric .', function () {
+describe('derivative numeric.', function () {
 
 
   it('JNsolve.D should be a object', function () {
@@ -125,5 +125,37 @@ describe('derivative numeric .', function () {
   it('JNsolve.D.linearinterapolation is a constructor that define the function_interpolated', function () {
     assert.equal( typeof new JNsolve.D.linearinterapolation([3,2],[6,8],[2,9]).function_interpolated, 'function'); // should returns true
   });
+
+});
+
+
+describe('Negative cases.', function () {
+
+  it('If interval does not contain the solution to cos(x)-x=0 is 0.73 using the regulafalsi method return nothing.', function () {
+    assert.equal(JNsolve.regulafalsi(f,[2,3]), undefined); // should returns true
+  });
+
+    it('If root of function given is complex or does not exist, return undefined.', function () {
+      assert.equal(JNsolve.fixedpoint(function (x) {
+        return x*x+2*x+4 ;
+      },8).Root, undefined); // should returns true
+    });
+
+    it('If interval does not contain the solution to cos(x)-x=0 is 0.73 using the bisection method return undefined.', function () {
+        assert.equal(JNsolve.bisection(f,[1,2]), undefined); // should returns true
+    });
+
+
+    it('If the initial point is  far away interval that contain the solution to cos(x)-x=0 is 0.73  using the Newton_Raphson method do not converge.', function () {
+          assert.equal(JNsolve.Newton_Raphson(f,[-3,1],7).Root, undefined); // should returns true
+    });
+
+      it('If interval does not contain the solution to cos(x)-x=0 is 0.73 using the Newton_Raphson-Higher Order method the solution is not found.', function () {
+            assert.equal(JNsolve.Newton_Raphson_Higherorder(f,[3,10],initialpoint).Root, undefined); // should returns true
+      });
+
+      it('If function to solve is not given, do nothing.', function () {
+            assert.equal(JNsolve.findroot( undefined,interval,initialpoint), undefined); // should returns true
+      });
 
 });
