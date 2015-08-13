@@ -1,6 +1,6 @@
 # JNsolve
 [![Build Status](https://travis-ci.org/4yopping/JNsolve.svg?branch=master)](https://travis-ci.org/4yopping/JNsolve) [![Inline docs](http://inch-ci.org/github/4yopping/JNsolve.svg?branch=master)](http://inch-ci.org/github/4yopping/JNsolve)
-
+[![npm version](https://badge.fury.io/js/jnsolve.svg)](http://badge.fury.io/js/jnsolve)
 **[Join us on Slack](http://jnsolve.slack.com)**
 
 ## Introduction
