@@ -24,7 +24,7 @@ $ npm install jnsolve
 - **JNsolve bisection**
 - **JNsolve Newton-Raphson**
 - **JNsolve Newton-Raphson-Higher-Order**
-- **JNsolve Derivative Numerical**
+- **JNsolve Numerical Derivative **
 - **JNsolve FindRoot**
 
 ## API
@@ -39,24 +39,24 @@ var JNsolve = require('JNsolve');
 
 #### `JNsolve#D`
 
-Object with differents numerics methods to calculate the derivative of function given.
+Object with differents numerics methods to calculate the derivative of a function.
 
 ##### `JNsolve#D#Nof(Function,Number,Array)`
-Constructor that generates the numeric derivative of `Function` with a  `Number` given of divisions in an interval ( `Array` => [a,b]).
+Constructor that generates the numeric derivative of `Function`=> f(x) with a  `Number` => N given of divisions in an interval  `Array` => [a,b].
 
 ```js
 JNsolve.D.Nof(f,1000,[2,7])
 ```
 
 ##### `JNsolve#D#Nof#f_x`
-Is a instance method what is the derivative numerical of  `Function` with a   `Number` given of divisions in an interval (  `Array` => [a,b]).
+Instance method what is the derivative numerical of  `Function` with a   `Number` given of divisions in an interval   `Array`.
 
 ```js
 JNsolve.D.Nof(f,1000,[2,7]).f_x(3)
 ```
-is a aproximation to the derivative of f (df_dx) on 3 with the 1000 divisions in the interval [2,7].
-
-
+is a aproximation to the derivative of f (df_dx) on 3 with the 1000 divisions in the interval [2,7]. Is available another method that calculate the numerical derivative calculating the dx_i in a optimazed way, dx_i=h/sqrt(1+dfdx^2) with h=(b-a)/N.
+##### `JNsolve#D_opt#Nof(Function,Number,Array)`
+##### `JNsolve#D_opt#Nof#f_x`
 
 ##### `JNsolve#D#linear_interpolation(Array)`
 Is a constructor that generates the numeric linear interpolation of data given in `Array`= [[x_1,y_2],[x_2,y_3],...[x_n,y_n]] in the interval [x_1,x_n].
