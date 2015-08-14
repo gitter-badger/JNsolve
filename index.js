@@ -1,10 +1,6 @@
 'use strict' ;
  var D =         require('./lib/derivativeN'),
-<<<<<<< HEAD
   D_opt =         require('./lib/derivativeN'),
-=======
-   D_opt =         require('./lib/derivativeNopt'),
->>>>>>> 3fb82064b9c2ea15ec7164e8ffc4bd8045f55c5d
   methodN =    require('./lib/methodN'),
   Xintersection= require('./lib/Xintersection'),
   testRoot=      require('./lib/testRoot'),
