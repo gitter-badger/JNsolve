@@ -1,5 +1,6 @@
 'use strict' ;
  var D =         require('./lib/derivativeN'),
+  D_opt =         require('./lib/derivativeN'),
   methodN =    require('./lib/methodN'),
   Xintersection= require('./lib/Xintersection'),
   testRoot=      require('./lib/testRoot'),
@@ -34,5 +35,6 @@ module.exports.bisection = bisection  ;
 module.exports.Newton_Raphson = Newton_Raphson  ;
 module.exports.Newton_Raphson_Higherorder = Newton_Raphson_Higherorder  ;
 module.exports.D = D  ;
+module.exports.D_opt=D_opt ;
 module.exports.findroot = findroot  ;
 module.exports.randomsearch = randomsearch  ;
