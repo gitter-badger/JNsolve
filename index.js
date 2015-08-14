@@ -1,6 +1,10 @@
 'use strict' ;
  var D =         require('./lib/derivativeN'),
+<<<<<<< HEAD
   D_opt =         require('./lib/derivativeN'),
+=======
+   D_opt =         require('./lib/derivativeNopt'),
+>>>>>>> 3fb82064b9c2ea15ec7164e8ffc4bd8045f55c5d
   methodN =    require('./lib/methodN'),
   Xintersection= require('./lib/Xintersection'),
   testRoot=      require('./lib/testRoot'),
@@ -15,11 +19,12 @@
   findroot  = require('./lib/findroot') ;
 
 module.exports.nsolveqn  =  function (g,interval,initialpoint,options) {
+    if(!g){return ;}
     options = options || {npoints_DNumeric : 1000, presicion : 0.001 , nstepsmax : 1000 , method : 'Newton_Raphson' } ;
     options.presicion = options.presicion || 0.001 ;
     options.npoints_DNumeric = options.npoints_DNumeric || 1000 ;
     options.nstepsmax = options.nstepsmax || 1000 ;
-    options.method = options.method || 'Newton_Raphson'
+    options.method = options.method || 'Newton_Raphson';
         var presicion = options.presicion ;
         var method = options.method ;
         return  methodN[method](g,interval,initialpoint,options);
