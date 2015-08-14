@@ -24,7 +24,7 @@ $ npm install jnsolve
 - **JNsolve bisection**
 - **JNsolve Newton-Raphson**
 - **JNsolve Newton-Raphson-Higher-Order**
-- **JNsolve Numerical Derivative **
+- **JNsolve Numerical Derivative**
 - **JNsolve FindRoot**
 
 ## API
